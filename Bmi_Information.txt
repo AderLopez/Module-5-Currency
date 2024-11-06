@@ -1,4 +1,4 @@
 You have a Normal Weight
-Weight: 72.0 
+Weight: 57.0 
 Height:172.0  
-Your BMI is: 24.3
+Your BMI is: 19.3
