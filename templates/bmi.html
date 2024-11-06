@@ -1,0 +1,103 @@
+<!-- Using a downloaded template the information from the template is below-->
+
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+
+	<!-- Creating the head on HTML -->
+	<head>
+		<title>BMI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="static/assets/css/noscript.css" /></noscript>
+	</head>
+	
+	
+	<!-- Creating the Body on HTML -->
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="./" >Personal Profile Home</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu for the options on the Webpage -->
+				<nav id="menu">
+					<div class="inner">
+						<h2>Menu</h2>
+						<ul class="links">
+							<li><a href="./">Home</a></li>
+							<li><a href="assignment_3">Assignment 3</a></li>    
+							<li><a href="experience">Experiences</a></li>
+							<li><a href="skills">Skills</a></li>
+							<li><a href="education">Education</a></li>
+							<li><a href="licenses">Licenses</a></li>
+							<li><a href="weather">Weather</a></li>
+							<li><a href="bmi">BMI Calculator</a></li>   
+						</ul>
+						<!-- Close button on the Menu -->
+						<a href="#" class="close">Close</a>
+					</div>
+				</nav>
+
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>BMI CALCULATOR</h2>
+								<p>This web will works as a calculator to find your BMI:</p>
+									
+								
+					<!-- Inputs From the Username -->
+					<section id="Wrapper">
+						<div class="inner">
+							<!-- Post method to send the information using Flask -->
+							<form method="post" action="/bmi">
+								<div class="fields">
+									<div class="field">
+										<!-- Testing inputs -->
+										<label for="height">Height (cm)</label>
+										<input type="text" name="height" id="height" />
+									</div>
+									<div class="field">
+										<label for="weight">Weight (kg)</label>
+										<input type="text" name="weight" id="weight" />
+									</div>
+								</div>
+								<ul class="actions">
+									<input  type="submit" value="Calculate">
+								</ul>
+							</form>
+							<!-- Message that only will be shown is the variables have information, after calculting -->
+							<p> {{bmi}}</p>
+							<p> {{message}}</p>
+						</div>
+					</section>
+							
+
+			</div>
+			
+		<!-- Calling the Scripts provided from the template -->
+			   
+		<script src="static/assets/js/jquery.min.js"></script>
+		<script src="static/assets/js/jquery.scrollex.min.js"></script>
+		<script src="static/assets/js/browser.min.js"></script>
+		<script src="static/assets/js/breakpoints.min.js"></script>
+		<script src="static/assets/js/util.js"></script>
+		<script src="static/assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,4 @@
+You have a Normal Weight
+Weight: 72.0 
+Height:172.0  
+Your BMI is: 24.3
