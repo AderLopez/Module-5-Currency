@@ -11,7 +11,7 @@
 
 	<!-- Creating the head on HTML -->
 	<head>
-		<title>Skills</title>
+		<title>Module 5</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="static/assets/css/main.css" />
@@ -27,76 +27,77 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="./" >Currency Dashboard</a></h1>
+						<h1><a href="./" >Currency Analysis Dashboard</a></h1>
 					</header>
 
-				<!-- Menu for the options on the Webpage -->
-				<nav id="menu">
-					<div class="inner">
-						<h2>Menu</h2>
-						<ul class="links">
-							<li><a href="./">Home</a></li>
-							<li><a href="assignment_3">Assignment 3</a></li>    
-							<li><a href="experience">Experiences</a></li>
-							<li><a href="skills">Skills</a></li>
-							<li><a href="education">Education</a></li>
-							<li><a href="licenses">Licenses</a></li>
-							<li><a href="weather">Weather</a></li>
-							<li><a href="bmi">BMI Calculator</a></li>   
-						</ul>
-						<!-- Close button on the Menu -->
-						<a href="#" class="close">Close</a>
-					</div>
-				</nav>
 
 				<!-- Wrapper -->
-				<!-- This section states the information of the climate in subdury -->
+				<!-- This section states the information of the Cryptocurrency -->
 					<section id="wrapper">
 
 						<header>
-						<!--The information below will be centered and show the variables using ninja-->>
-						<center>
+						<!--The information below will be centered and show the variables using ninja-->
+							<center>
 							<!--First part to show the ISS location-->
-							<div class="inner">
-								<h2>This Web is for Module 5 - Currency, for Connected Data</h2>
-								<p>Cambrian College</p>
-								<br>
-								<h3>The International Space Station is located now in: </h3>
-								<p>Latitude: {{Latitude}}, Longitude: {{Longitude}} </p>
-								<p>Click Here to see it on Maps: <a href="{{Link}}"> {{Link}}</a></p>
-								
-							<section>
-								<!--Showing the weather below ISS-->
-								<div class="box alt">
-									<div class="row gtr-uniform">
-										<div  class="col-12"><span class="image fit"><img  src="static/images/ISS_image.jpg"  alt=""  /></span></div>
+								<section>
+									<!--Uploading the Graph for Trade Volume vs Transaction Volume Ratio -->
+									<div class="dashboard-container">
+											<div class="box-container">
+												<!-- Box 1 -->
+												<div class="box">
+													<div class="text">
+														<h2 class="topic-heading">150</h2>
+														<h2 class="topic">Likes</h2>
+													</div>
+													<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png" alt="likes">
+												</div>
+												
+												<!-- Box 2 -->
+												<div class="box">
+													<div class="text">
+														<h2 class="topic-heading">200</h2>
+														<h2 class="topic">Followers</h2>
+													</div>
+													<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png" alt="followers">
+												</div>
+												
+												<!-- Box 3 -->
+												<div class="box">
+													<div class="text">
+														<h2 class="topic-heading">75</h2>
+														<h2 class="topic">Shares</h2>
+													</div>
+													<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png" alt="shares">
+												</div>
+											</div>
 									</div>
-								</div>
-								<br>
-								<h3>The weather below the International Space Station is: </h3>
-								<p>Temperature: {{Temperature}} Centigrades</p>
-								<p>The weather now is: {{Description}}</p>
-							</section>
 
-							<h3>Location of the International Space Station: </h3>
-							<p> The ISS is over: {{Country_Name}}</p>
+
+									<div>
+											<h2>Bitcoin Trade Volume vs Transaction Volume Ratio </h2>
+											&nbsp
+											<div  class="col-12"><span class="image fit"><img  src="static/Bitcoin_Trade_vs_Transaction_volume_Ratio.svg"  style="width:4000px;" alt=""  /></span></div>
+											&nbsp
+									</div>
+									
+									
+								
+
+								
+									<div>
+										&nbsp
+										<h2>Peru Unemployment Information for 2021</h2>
+										&nbsp
+										<div  class="col-12"><span class="image fit"><img  src="static/Peru_unemployment.svg"  style="width:4000px;" alt=""  /></span></div>
+										&nbsp
+									</div>
+
+								</section>
+							</center>
 							
-							<!--Showing the flag below ISS and the flag of peru-->
-							<div class="row gtr-uniform"></div>
-								<div  class="col-4"><span class="image fit"><img  src={{Flag_dynamic}}  style="width:250px;", alt=""  /></span></div>
-								<p> Additionally, the Flag of Peru is:</p>
-								<div  class="col-4"><span class="image fit"><img  src={{Flag_static}}  style="width:250px;", alt=""  /></span></div>
-								<br>
-								<h3>The distance between Cambrian College(Sudbury) and the ISS is: </h3>
-								<p>Distance: {{Distance}} Km</p>
-							</div>
-
-
-
-						</center>
 						</header>
-					</section>
-
+						
+					
 			</div>
 
 		<!-- Calling the Scripts provided from the template -->

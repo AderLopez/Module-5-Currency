@@ -29,6 +29,81 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+	.dashboard-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+		background-color: #46495200;
+		height: 18vh;
+	}
+	
+	.box-container {
+		display: flex;
+		gap: 20px;
+	}
+	
+	.box {
+				background-color: #2e3141;
+				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+				background-size: auto,
+				cover;
+				background-attachment: fixed,
+				fixed;
+				background-position: center,
+				center;
+
+		/*background-color: #2a1a64;*/
+		border-radius: 10px;
+		/*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+		padding: 20px;
+		width: 500px;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: transform 0.3s ease;
+	}
+	
+	.box:hover {
+		transform: translateY(-10px);
+	}
+	
+	.text {
+		margin-bottom: 15px;
+	}
+	
+	.topic-heading {
+		font-size: 2em;
+		color: #ffffff;
+		margin: 0;
+	}
+	
+	.topic {
+		font-size: 1em;
+		color: #ffffff;
+	}
+	
+	.box img {
+		width: 60px;
+		height: auto;
+	}
+	
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.box-container {
+			flex-direction: column;
+			gap: 15px;
+		}
+	
+		.box {
+			width: 100%;
+		}
+	}
+
+
+
+
 body {
 	line-height: 1;
 }

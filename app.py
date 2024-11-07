@@ -24,7 +24,10 @@ app = Flask(__name__, template_folder='templates')
 
 
 #Calling the index.html that will be the home page.
-@app.route('/')
+@app.route('/', methods=['POST','GET'])
 def Index():
+    import Crytocurrency
+    Crytocurrency.cryptocurrency()
+
     return render_template("Module_5_currency.html")
 
