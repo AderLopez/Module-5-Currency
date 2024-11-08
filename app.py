@@ -14,6 +14,7 @@ from get_iss import iss_loc
 from get_weather import get_weathers
 
 
+
 #Normal path when not using a specific folder:
 #@app.route("/")
 #def hello():
@@ -29,5 +30,6 @@ def Index():
     import Crytocurrency
     Crytocurrency.cryptocurrency()
 
-    return render_template("Module_5_currency.html")
+    current_rate_btc,current_rate_jpy, current_date = Crytocurrency.Bitcoin_rate()
+    return render_template("Module_5_currency.html",Current_date = current_date, Current_rate_BTC = current_rate_btc, Current_rate_JPY = current_rate_jpy )
 

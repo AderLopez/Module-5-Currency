@@ -3,7 +3,10 @@
 import nasdaqdatalink
 import pandas as pd
 import pygal
-from datetime import timedelta
+from datetime import timedelta, date
+import urllib.request
+import json
+
 
 
 def cryptocurrency():
@@ -22,12 +25,22 @@ def cryptocurrency():
     TVTVR_data_temp_date_max =TVTVR_data['date'].max()
     print(TVTVR_data_temp_date_max)
 
+
+    #Obtaining the current bitcoin rate:
+    TVTVR_current= TVTVR_data[TVTVR_data['date'] == TVTVR_data_temp_date_max]
+    TVTVR_current_rate = TVTVR_current.iloc[0,2]
+    TVTVR_current_date = TVTVR_current.iloc[0,1].strftime('%Y-%m-%d')
+    
+    print(TVTVR_current_date)
+
     #Code to obtain one week of data:
     last_7_days = TVTVR_data_temp_date_max - timedelta(days=7)
-    TVTVR_data_temp = TVTVR_data[(TVTVR_data['date'] >= '2016-07-14') & (TVTVR_data['date'] <= TVTVR_data_temp_date_max)]
-    print(TVTVR_data_temp)
+    TVTVR_data_temp = TVTVR_data[(TVTVR_data['date'] >= last_7_days) & (TVTVR_data['date'] <= TVTVR_data_temp_date_max)]
+    #print(TVTVR_data_temp)
     #TVTVR_data_temp = TVTVR_data.head(100)
 
+    TVTVR_data_temp = TVTVR_data_temp.sort_values(by='date', ascending=True) 
+    print(TVTVR_data_temp)
 
     #Formatting the data to print the graph
     TVTVR = {
@@ -78,6 +91,8 @@ def cryptocurrency():
     #After analyzing the information we saw that we have data for the 2021 period, which will be analyze.
     QDL_ODA_temp = QDL_ODA[(QDL_ODA['date'] >= '2000-01-01') & (QDL_ODA['date'] <= '2024-12-31')]
     #QDL_ODA_temp =QDL_ODA
+
+    QDL_ODA_temp = QDL_ODA_temp.sort_values(by='date', ascending=True) 
     print(QDL_ODA_temp)
 
     #create an empty list to store the fetched data
@@ -101,4 +116,50 @@ def cryptocurrency():
         chart.x_labels = dates
         chart.add("values", value)
         chart.render_to_file('static/Peru_unemployment.svg') #svg format
-    return
+    return 
+
+
+
+def Bitcoin_rate():
+
+    #To store the data 
+    data = []
+
+    #This is the data for 7 days:
+    #for value in range(7): #from 0 to 6
+
+
+    #From testing we see that the data is from one day before the current date:
+    Current_Date = date.today() - timedelta(days=1)
+    print(Current_Date)
+    print(date.today())
+
+    #This will be the code for only current date:
+    for value in range(1): #from 0 to 6
+        
+        #The data will be taken from the 2nd of march plus to 7 days more.
+        url=f'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{Current_Date}/v1/currencies/btc.json'
+        request = urllib.request.urlopen(url)
+        result = json.loads(request.read())
+        data.append(result["btc"]["usd"])   
+        
+    Current_rate_btc = round(data[0],2)
+    print(Current_rate_btc)
+
+    #To store the data 
+    data1 = []
+
+    #This will be the code for only current date:
+    for value in range(1): #from 0 to 6
+        
+        #The data will be taken from the 2nd of march plus to 7 days more.
+        url=f'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@{Current_Date}/v1/currencies/usd.json'
+        request = urllib.request.urlopen(url)
+        result = json.loads(request.read())
+        data1.append(result["usd"]["jpy"])   
+        
+    Current_rate_jpy = round(data1[0],2)
+    print(Current_rate_jpy)
+
+
+    return Current_rate_btc, Current_rate_jpy, Current_Date
