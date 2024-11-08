@@ -112,7 +112,7 @@ def cryptocurrency():
 
         #To draw a line
         chart = pygal.Line(x_label_rotation = 45)
-        chart.title=('Bitcoin Trade Volume vs Transaction Ratio')
+        chart.title=('Peru Unemployment Rate from 2000 to 2024')
         chart.x_labels = dates
         chart.add("values", value)
         chart.render_to_file('static/Peru_unemployment.svg') #svg format
